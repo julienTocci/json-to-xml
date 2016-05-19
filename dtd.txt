@@ -1,0 +1,25 @@
+<!DOCTYPE table [
+        <!ELEMENT table (array)*>
+        <!ATTLIST table
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT array (data|part|time|meth)*>
+        <!ELEMENT data (heading|men|contracts|budget|action|parameters|cost|extras|status)*>
+        <!ELEMENT heading (#PCDATA)>
+        <!ELEMENT men (#PCDATA)>
+        <!ELEMENT contracts (amount|resource)*>
+        <!ELEMENT amount (#PCDATA)>
+        <!ELEMENT resource (#PCDATA)>
+        <!ELEMENT budget (#PCDATA)>
+        <!ELEMENT part (#PCDATA)>
+        <!ELEMENT time (#PCDATA)>
+        <!ELEMENT meth (#PCDATA)>
+        <!ELEMENT action (#PCDATA)>
+        <!ELEMENT parameters (direction)*>
+        <!ELEMENT direction (#PCDATA)>
+        <!ELEMENT cost (#PCDATA)>
+        <!ELEMENT extras (found|range|biomes)*>
+        <!ELEMENT found (#PCDATA)>
+        <!ELEMENT range (#PCDATA)>
+        <!ELEMENT status (#PCDATA)>
+        <!ELEMENT biomes (#PCDATA)>
+        ]>
