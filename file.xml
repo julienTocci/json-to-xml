@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table   xmlns="http://www.w3.org/2001/XMLSchema">
+<array><color>red</color><value>#f00</value></array><array><color>green</color><value>#0f0</value></array><array><color>blue</color><value>#00f</value></array><array><color>cyan</color><value>#0ff</value></array><array><color>magenta</color><value>#f0f</value></array><array><color>yellow</color><value>#ff0</value></array><array><color>black</color><value>#000</value></array>
+</table>
