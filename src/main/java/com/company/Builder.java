@@ -13,17 +13,15 @@ public class Builder {
 
     public Builder() {
         init();
-
-
         init = new Init(data.getJSONObject(0));
         System.out.println(init.toString());
+        for(int i = 1 ; i < data.length(); i +=2) {
+            Request r = new Request(data.getJSONObject(i));
+            System.out.println(r.toString());
 
-        Request r = new Request(data.getJSONObject(1));
-        System.out.println(r.toString());
-
-        //Answer a = new Answer(data.getJSONObject(2), "scout");
-        //System.out.println(a.toString());
-
+            Answer a = new Answer(data.getJSONObject(i+1), r.getAction());
+            System.out.println(a.toString());
+        }
 
         //trans = new Transmission(data);
     }

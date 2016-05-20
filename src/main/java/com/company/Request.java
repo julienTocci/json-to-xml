@@ -4,11 +4,15 @@ import org.json.JSONObject;
 
 public class Request extends BasicRequest{
 
+    public String getAction() {
+        return action;
+    }
+
     private String action;
     private JSONObject param;
     private JSONObject data;
     private String parameter;
-
+    private int numberMen;
     @Override
     public String toString() {
         return "Request{" +
@@ -27,6 +31,9 @@ public class Request extends BasicRequest{
             param = data.getJSONObject("parameters");
             if(action.equals("exploit")){
                 this.parameter = param.getString("resource");
+            }else if(action.equals("land")) {
+                this.parameter = param.getString("creek");
+                this.numberMen = param.getInt("people");
             }else{
                 this.parameter = param.getString("direction");
             }
