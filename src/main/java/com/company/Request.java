@@ -34,6 +34,10 @@ public class Request extends BasicRequest{
             }else if(action.equals("land")) {
                 this.parameter = param.getString("creek");
                 this.numberMen = param.getInt("people");
+            }else if(action.equals("transform")){
+                //this.parameter = param.
+                this.parameter = param.toString();
+
             }else{
                 this.parameter = param.getString("direction");
             }
