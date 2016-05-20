@@ -10,7 +10,7 @@ public class Transmission {
 
     public Transmission(JSONObject req, JSONObject ans) {
         this.req = new Request(req);
-        this.answ = new Answer(ans);
+        //this.answ = new Answer(ans);
 
     }
 

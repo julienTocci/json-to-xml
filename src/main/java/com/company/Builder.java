@@ -21,6 +21,8 @@ public class Builder {
         Request r = new Request(data.getJSONObject(1));
         System.out.println(r.toString());
 
+        //Answer a = new Answer(data.getJSONObject(2), "scout");
+        //System.out.println(a.toString());
 
 
         //trans = new Transmission(data);
