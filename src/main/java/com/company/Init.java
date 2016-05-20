@@ -6,35 +6,29 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class Init {
+public class Init extends BasicRequest {
 
     private JSONObject json, data;
 
-    private String headingStr, partStr, methStr;
+    private String headingStr;
     private int menInt;
-    private long timeInt;
     private HashMap<String, Integer> map;
 
     @Override
     public String toString() {
         return "Init{" +
-                "json=" + json +
-                ", data=" + data +
-                ", headingStr='" + headingStr + '\'' +
-                ", partStr='" + partStr + '\'' +
-                ", methStr='" + methStr + '\'' +
+                " headingStr='" + headingStr + '\'' +
+                getbasicstr()+
                 ", menInt=" + menInt +
-                ", timeInt=" + timeInt +
                 ", map=" + map +
                 '}';
     }
 
     public Init(JSONObject json){
+        super(json);
         this.json = json;
         this.data = json.getJSONObject("data");
-        this.partStr = (String) json.get("part");
-        this.timeInt = (Long) json.get("time");
-        this.methStr = (String) json.get("meth");
+
 
         //fill number of men
         this.menInt = getMen(data);

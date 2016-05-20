@@ -2,11 +2,40 @@ package com.company;
 
 import org.json.JSONObject;
 
-public class Answer {
+public class Answer extends BasicRequest{
+
+    private JSONObject data;
+    private int cost;
+    private String statut;
+    private String action;
+
+    public Answer(JSONObject ans, String action) {
+        super(ans);
+        this.data = ans.getJSONObject("data");
+        this.action = action;
+        switch(action.toLowerCase()){
+            case "scout":
+                fillScout();
+                break;
+
+            case "explore":
+                fillExplore();
+                break;
+
+            default:
+                break;
 
 
 
-    public Answer(JSONObject ans) {
+        }
+    }
+
+    private void fillExplore() {
+
+    }
+
+    private void fillScout() {
+
 
     }
 }

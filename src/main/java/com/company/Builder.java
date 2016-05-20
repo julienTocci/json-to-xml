@@ -18,6 +18,9 @@ public class Builder {
         init = new Init(data.getJSONObject(0));
         System.out.println(init.toString());
 
+        Request r = new Request(data.getJSONObject(1));
+        System.out.println(r.toString());
+
 
 
         //trans = new Transmission(data);
