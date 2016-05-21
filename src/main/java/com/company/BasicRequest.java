@@ -18,4 +18,9 @@ public class BasicRequest {
                 ", methStr='" + methStr + '\'' +
                 ", timeInt=" + timeInt ;
     }
+
+
+    protected String getbasicxml() {
+        return "<part>"+partStr+"</part>"+"\n"+"<meth>"+methStr+"</meth>"+"\n"+"<time>"+timeInt+"</time>"+"\n";
+    }
 }

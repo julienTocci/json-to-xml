@@ -169,4 +169,57 @@ public class Answer extends BasicRequest{
             resourceStr[i] = (String) extra.getJSONArray("resources").get(i);
         }
     }
+
+    public String toXML() {
+
+        StringBuilder sb = new StringBuilder("<Answer>" +
+                "\n" +
+                "<cost>"+cost+"</cost>" +"\n");
+
+
+        switch (action.toLowerCase()) {
+            case  "scout":
+                sb.append("<altitude>"+altitude+"</altitude>"+"\n");
+                for(int i = 0 ; i<resourceStr.length; i++){
+                    sb.append("<resource>"+resourceStr[i]+"</resource>"+"\n");
+                }
+                break;
+
+            case "explore":
+                sb.append("<pois>"+pois+"</pois>"+"\n");
+                for(int i = 0 ; i<res.length; i++){
+                    sb.append("<resource>"+res[i]+"</resource>"+"\n");
+                }
+                break;
+            case "exploit":
+                sb.append("<amount>"+amount+"</amount>"+"\n");
+                break;
+            case "transform":
+                sb.append("<prod>"+production+"</prod>"+"\n");
+                sb.append("<kind>"+kind+"</kind>"+"\n");
+                break;
+            case "glimpse":
+                sb.append("<asked_range>"+askedrange+"</asked_range>"+"\n");
+                break;
+            case "echo":
+                sb.append("<range>"+range+"</range>"+"\n");
+                sb.append("<found>"+found+"</found>"+"\n");
+                break;
+            case "scan":
+                for (int i =0; i<biome.length(); i++){
+                    sb.append("<biome>"+biome.get(i)+"</biome>"+"\n");
+                }
+
+                for (int i =0; i<creeks.length(); i++){
+                    sb.append("<creek>"+creeks.get(i)+"</creek>"+"\n");
+                }
+
+                break;
+
+        }
+
+        sb.append(getbasicxml());
+        sb.append("</Answer>");
+        return sb.toString();
+    }
 }

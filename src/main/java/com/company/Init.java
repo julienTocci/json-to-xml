@@ -62,7 +62,14 @@ public class Init extends BasicRequest {
 
     public String toXML(){
 
-        //TODO KAPA
-        return "";
+        /*
+        Init{" +
+                " headingStr='" + headingStr + '\'' +
+                getbasicstr()+
+                ", menInt=" + menInt +
+                ", map=" + map +
+                '}';
+         */
+        return "<init></init>";
     }
 }

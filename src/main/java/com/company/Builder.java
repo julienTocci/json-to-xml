@@ -14,16 +14,18 @@ public class Builder {
     public Builder() {
         init();
         init = new Init(data.getJSONObject(0));
-        System.out.println(init.toString());
-        for(int i = 1 ; i < data.length(); i +=2) {
-            Request r = new Request(data.getJSONObject(i));
-            System.out.println(r.toString());
 
-            Answer a = new Answer(data.getJSONObject(i+1), r.getAction());
-            System.out.println(a.toString());
+        StringBuilder sb = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+        sb.append("<root>\n");
+        sb.append(init.toXML()+"\n");
+
+        for(int i = 1 ; i < data.length(); i +=2) {
+            Transmission t = new Transmission(data.getJSONObject(i), data.getJSONObject(i+1));
+            sb.append(t.toXML());
         }
 
-        //trans = new Transmission(data);
+        sb.append("</root>");
+        System.out.println(sb.toString());
     }
 
 

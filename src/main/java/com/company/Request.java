@@ -43,4 +43,27 @@ public class Request extends BasicRequest{
             }
         }
     }
+
+    public String toXML() {
+        StringBuilder sb = new StringBuilder("<Request>" +
+                "\n" +
+                "<action>"+action+"</action>"+
+                "\n");
+
+        if(action.equals("exploit")){
+            sb.append("<resource>"+ parameter + "</resource>"+"\n");
+
+        }else if(action.equals("land")){
+            sb.append("<creek>"+ parameter + "</creek>"+"\n" + "<men>"+numberMen + "</men>"+"\n");
+        }
+        else {
+            sb.append("<parameter>"+parameter + "</parameter>"+"\n");
+        }
+
+        sb.append(getbasicxml());
+        sb.append("</Request>");
+
+        return sb.toString();
+    }
+
 }
