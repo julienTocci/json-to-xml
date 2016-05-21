@@ -1,25 +1,25 @@
-<!DOCTYPE table [
-        <!ELEMENT table (array)*>
-        <!ATTLIST table
-                xmlns CDATA #REQUIRED>
-        <!ELEMENT array (data|part|time|meth)*>
-        <!ELEMENT data (heading|men|contracts|budget|action|parameters|cost|extras|status)*>
-        <!ELEMENT heading (#PCDATA)>
-        <!ELEMENT men (#PCDATA)>
-        <!ELEMENT contracts (amount|resource)*>
-        <!ELEMENT amount (#PCDATA)>
-        <!ELEMENT resource (#PCDATA)>
-        <!ELEMENT budget (#PCDATA)>
-        <!ELEMENT part (#PCDATA)>
-        <!ELEMENT time (#PCDATA)>
-        <!ELEMENT meth (#PCDATA)>
-        <!ELEMENT action (#PCDATA)>
-        <!ELEMENT parameters (direction)*>
-        <!ELEMENT direction (#PCDATA)>
-        <!ELEMENT cost (#PCDATA)>
-        <!ELEMENT extras (found|range|biomes)*>
-        <!ELEMENT found (#PCDATA)>
-        <!ELEMENT range (#PCDATA)>
-        <!ELEMENT status (#PCDATA)>
-        <!ELEMENT biomes (#PCDATA)>
-        ]>
+<!DOCTYPE root [
+" +
+                "        <!ELEMENT root (init|conversation)*>\n" +
+                "        <!ELEMENT init (heading|men|resource|amount|budget)*>\n" +
+                "        <!ELEMENT heading (#PCDATA)>\n" +
+                "        <!ELEMENT men (#PCDATA)>\n" +
+                "        <!ELEMENT resource (#PCDATA)>\n" +
+                "        <!ELEMENT amount (#PCDATA)>\n" +
+                "        <!ELEMENT budget (#PCDATA)>\n" +
+                "        <!ELEMENT conversation (Request|Answer)*>\n" +
+                "        <!ELEMENT Request (action|parameter|part|meth|time|creek|men|resource)*>\n" +
+                "        <!ELEMENT action (#PCDATA)>\n" +
+                "        <!ELEMENT parameter (#PCDATA)>\n" +
+                "        <!ELEMENT part (#PCDATA)>\n" +
+                "        <!ELEMENT meth (#PCDATA)>\n" +
+                "        <!ELEMENT time (#PCDATA)>\n" +
+                "        <!ELEMENT Answer (cost|range|found|part|meth|time|biome|creek|altitude|resource|pois|amount)*>\n" +
+                "        <!ELEMENT cost (#PCDATA)>\n" +
+                "        <!ELEMENT range (#PCDATA)>\n" +
+                "        <!ELEMENT found (#PCDATA)>\n" +
+                "        <!ELEMENT biome (#PCDATA)>\n" +
+                "        <!ELEMENT creek (#PCDATA)>\n" +
+                "        <!ELEMENT altitude (#PCDATA)>\n" +
+                "        <!ELEMENT pois (#PCDATA)>\n" +
+                "        ]>

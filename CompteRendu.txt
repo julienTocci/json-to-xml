@@ -1,0 +1,14 @@
+Binome: TOCCI/BOUCHER GROUPE 3
+
+Choix d'implémentation:
+Après avoir étudie les logs d'islands, nous avons remarqué que ceci se décomposaient de la façon suivante :
+    -un premier objet json contenant toutes les informations de départ
+    -Des couples de type "Requête/Réponse" qui correspondent à la demande du bot d'effectuer une action puis à la réponse du modèle de jeu
+
+De ce fait nous avons choisi de créer les objets suivants:
+    -Init: qui va traiter l'objet d'information initiale.
+    -Request: qui traite les objets json de type "Requête"
+    -Answer: qui traite les objets json de type "Réponse"
+    -Transmission qui est l'objet liant un objet Request à sa réponse,c'est à dire à son objet Answer.
+    -Resources : objet contenant les informations d'une ressource (utilisable seulement sur certaines requêtes spécifiques)
+    -BasicRequest: cet objet est très utile car les requêtes et réponses ont en commun (dans leur json) "meth","part" et "time"

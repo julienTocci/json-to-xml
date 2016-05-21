@@ -4,14 +4,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Map;
 
 public class Init extends BasicRequest {
 
     private JSONObject json, data;
 
     private String headingStr;
-    private int menInt;
+    private int menInt, budget;
     private HashMap<String, Integer> map;
 
     @Override
@@ -32,6 +34,9 @@ public class Init extends BasicRequest {
 
         //fill number of men
         this.menInt = getMen(data);
+
+        //fil budget
+        this.budget = (Integer) data.get("budget");
 
         //fill heading
         this.headingStr = getHeading(data);
@@ -62,14 +67,24 @@ public class Init extends BasicRequest {
 
     public String toXML(){
 
-        /*
-        Init{" +
-                " headingStr='" + headingStr + '\'' +
-                getbasicstr()+
-                ", menInt=" + menInt +
-                ", map=" + map +
-                '}';
-         */
-        return "<init></init>";
+        StringBuilder sb = new StringBuilder("<init>" +
+                "\n<heading>" +
+                headingStr +
+                "</heading>" +
+                "\n" +
+                "<men>" +
+                String.valueOf(menInt) +
+                "</men>");
+        Iterator entries = map.entrySet().iterator();
+        while (entries.hasNext()) {
+            Map.Entry thisEntry = (Map.Entry) entries.next();
+            String key = (String) thisEntry.getKey();
+            int value = (int) thisEntry.getValue();
+            sb.append("<resource>"+key+"</resource>"+"\n");
+            sb.append("<amount>"+value+"</amount>"+"\n");
+        }
+        sb.append("<budget>"+budget+"</budget>"+"\n");
+        sb.append("</init>");
+        return sb.toString();
     }
 }
